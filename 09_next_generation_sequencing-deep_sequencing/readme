@@ -1,0 +1,24 @@
+#in order to install tools for SAM BAM and alignment algorithms
+#for the reads inside a given genome.
+
+#Prereqs:
+apt-get install samtools bwa
+
+
+#NC_008253.fna holds the complete genome of E.coli.
+
+
+#To generate the files, on top-level 
+#directory "genomes" use the following commands
+
+#########################
+bwa mem NC_008253.fna e_coli_10000snp.fq > e_coli_10000snp.sam
+samtools view -b -S e_coli_10000snp.sam > e_coli_10000snp.bam
+samtools sort e_coli_10000snp.bam > e_coli_10000snp.sorted.bam
+samtools index e_coli_10000snp.sorted.bam
+#########################
+
+
+
+## pysam  ##
+python module : interface for reading/writing SAM/BAM files.
