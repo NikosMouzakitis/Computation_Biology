@@ -63,3 +63,10 @@ peptideSequence="".join(peptide)
 
 print("Translated with our algorithm")
 print(peptideSequence.lower())
+
+
+ret=(peptideSequence.lower() == data2)
+if(ret == True):
+	print("\n\nSuccess! Our translation algorithm matches the NCBI data for the protein")
+else:
+	print("\n\nFailure..wrong translation into protein")
